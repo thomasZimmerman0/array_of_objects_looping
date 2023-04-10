@@ -149,7 +149,7 @@ const people = [
         age: 26,
         job: "Designer",
         sex: "Female",
-        state
+        state: "NJ"
     },
 
     {
