@@ -13,3 +13,30 @@
     4) Lastly, append the html string to the main tags inside index using innerHTML. Before appending the list of persons, add an h1 tag to the dom that contains the job title that was passed to the fucntion. 
 */
 
+let jobTitle = "Engineer"
+
+let applicantMatcher = (people, job) => {
+    let matches = []
+    let html = ""
+
+    for(let person of people){
+        if(person.job === job){
+            matches.push(person)
+        }
+    }
+
+    for(let person of matches){
+        html += `<h2>${person.name}</h2>
+                 <h3>${person.address} ${person.state}</h3>
+                 <ul>
+                    <li>${person.age}</li>
+                    <li>${person.sex}</li>
+                    <li>${person.job}</li>
+                 </ul>
+                 `
+    }
+
+    document.querySelector("main").innerHTML = `<h1>${ job }<h1>` + html
+}
+
+applicantMatcher(people, jobTitle);
